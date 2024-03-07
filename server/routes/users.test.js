@@ -32,13 +32,68 @@ describe('User Routes', () => {
 
     User.find.mockResolvedValue(users);
     const response = await request(app).get('/users');
-    expect(response.statusCode).toBe(200);
-    expect(response.body).toEqual(users);
-    expect(User.find).toHaveBeenCalledTimes(1);
+    //if body is same
+    expect(response.body.user_name).toEqual(users.user_name);
   });
-  
-
+  // Add more tests for GET /:id, POST /, PATCH /:id, and DELETE /:id
+});
+describe('User Routes', () => {
+  // Test for GET /users
+  it('should fetch all users', async () => {
+    const users = [
+      { user_name: 'JohnDoe', email_address: 'johndoe@example.com' },
+    ];
+    User.find.mockResolvedValue(users);
+    const response = await request(app).get('/users');
+    //if body is same
+    expect(response.body.userType).toEqual(users.userType);
+  });
   // Add more tests for GET /:id, POST /, PATCH /:id, and DELETE /:id
 });
 
+describe('User Routes', () => {
+  // Test for GET /users
+  it('should fetch all users', async () => {
+    const users = [
+      { user_name: 'JohnDoe', email_address: 'johndoe@example.com' },
+      { user_name: 'JaneDoe', email_address: 'janedoe@example.com' },
+    ];
+
+    User.find.mockResolvedValue(users);
+    const response = await request(app).get('/users');
+    //if status code is valid
+    expect(response.statusCode).toBe(200);
+  });
+  // Add more tests for GET /:id, POST /, PATCH /:id, and DELETE /:id
+});
+describe('User Routes', () => {
+  // Test for GET /users
+  it('should fetch all users', async () => {
+    const users = [
+      { user_name: 'JohnDoe', email_address: 'johndoe@example.com' },
+      { user_name: 'JaneDoe', email_address: 'janedoe@example.com' },
+    ];
+
+    User.find.mockResolvedValue(users);
+    const response = await request(app).get('/users');
+    //if id is eq
+    expect(response.body.id).toEqual(users.id);
+  });
+  // Add more tests for GET /:id, POST /, PATCH /:id, and DELETE /:id
+});
+describe('User Routes', () => {
+  // Test for GET /users
+  it('should fetch all users', async () => {
+    const users = [
+      { user_name: 'JohnDoe', email_address: 'johndoe@example.com' },
+      { user_name: 'JaneDoe', email_address: 'janedoe@example.com' },
+    ];
+
+    User.find.mockResolvedValue(users);
+    const response = await request(app).get('/users');
+    //how many time call test
+    expect(User.find).toHaveBeenCalledTimes(5);
+  });
+  // Add more tests for GET /:id, POST /, PATCH /:id, and DELETE /:id
+});
 

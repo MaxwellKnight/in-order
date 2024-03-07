@@ -33,3 +33,66 @@ Content-Type: application/json
     "password" : " "
 }
 //===============================================================//
+###
+GET http://localhost:3000/products
+###
+GET http://localhost:3000/products/65e0e30a8972939b4d7729bd
+
+
+###
+
+POST http://localhost:3000/products
+Content-Type: application/json
+
+{
+    "product_name" : "Dortrhttyteryeyertry",
+    "product_amount" : "523",
+    "product_Category": "shitttt"
+}
+
+
+###
+DELETE http://localhost:3000/products/65e0e3118972939b4d7729bf
+
+###
+
+PATCH http://localhost:3000/products/65e0e30a8972939b4d7729bd
+Content-Type: application/json
+
+{
+    "product_name" : "dodashelmaxwell",
+    "pruduct_amount" : "9",
+    "product_Category" : "stt"
+}
+////////////////////////////////////////////////////////////////
+###
+
+GET http://localhost:3000/orders
+
+###
+GET http://localhost:3000/orders/65ea19fdd963e2b019e04f65
+
+###
+POST http://localhost:3000/orders
+Content-Type: application/json
+
+{
+    "order_user_id" : "234",
+    "products": "[{\"productId\": \"785654436574\", \"quantity\": 2}, {\"productId\": \"prod2\", \"quantity\": 1}]",
+    "product_Category": "shitttt"
+}
+
+
+###
+# Corrected DELETE and PATCH requests for orders
+DELETE http://localhost:3000/orders/65e4dbd5b94203197674dc46
+###
+
+PATCH http://localhost:3000/orders/65e4dbd5b94203197674dc46
+Content-Type: application/json
+
+{
+    "order_user_id": "user123",
+    "products": "[{\"productId\": \"prod1\", \"quantity\": 4}, {\"productId\": \"prod3\", \"quantity\": 1}]",
+    "creditCard": "9876-5432-1987-6543"    
+}

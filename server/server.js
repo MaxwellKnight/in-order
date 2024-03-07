@@ -22,5 +22,12 @@ app.use(express.json())
 const userrouter = require('./routes/users')
 app.use('/users',userrouter)
 
+//creating products route
+const productrouter = require('./routes/products')
+app.use('/products',productrouter)
+
+
+
+
 //listen to the server
 app.listen(3000, () => console.log('Server Started'))   
