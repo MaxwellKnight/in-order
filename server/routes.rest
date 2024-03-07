@@ -1,0 +1,35 @@
+GET http://localhost:3000/users
+
+###
+
+GET http://localhost:3000/users/65ddafb295750ee1da52850
+
+###
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+    "user_name" : "dodashelDor",
+    "password" : "dodashelOr" ,
+    "userType" : "cash_Register",
+    "first_name" : "doda",
+    "last_name" : "shelDor",
+    "email_address" :"dodashelDor@dodashelOr.com" ,
+    "favorites" : "balck coffe" 
+}
+
+###
+
+DELETE http://localhost:3000/users/
+
+
+###
+
+PATCH http://localhost:3000/users/65ddbf5eeae6d5b8ea3bdd12
+Content-Type: application/json
+
+{
+    "user_name" : "dodashelmaxwell",
+    "password" : " "
+}
+//===============================================================//
