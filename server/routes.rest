@@ -32,7 +32,7 @@ Content-Type: application/json
     "user_name" : "dodashelmaxwell",
     "password" : " "
 }
-//===============================================================//
+
 ###
 GET http://localhost:3000/products
 ###
@@ -64,35 +64,72 @@ Content-Type: application/json
     "pruduct_amount" : "9",
     "product_Category" : "stt"
 }
-////////////////////////////////////////////////////////////////
 ###
 
+//Get all orders
+###
 GET http://localhost:3000/orders
-
 ###
-GET http://localhost:3000/orders/65ea19fdd963e2b019e04f65
 
+# Get one order by ID
+# Replace ':id' with an actual order ID
+GET http://localhost:3000/orders/65e0e30a8972939b4d7729bd
 ###
+
+# Create one order
+# You may need to adjust the JSON body according to your Order schema
 POST http://localhost:3000/orders
 Content-Type: application/json
 
 {
-    "order_user_id" : "234",
-    "products": "[{\"productId\": \"785654436574\", \"quantity\": 2}, {\"productId\": \"prod2\", \"quantity\": 1}]",
-    "product_Category": "shitttt"
+  "order_user_id": "user123",
+  "products": "[{\"productId\":\"prod001\",\"quantity\":2}]",
+  "creditCard": "1234-5678-9101-1121"
 }
-
-
-###
-# Corrected DELETE and PATCH requests for orders
-DELETE http://localhost:3000/orders/65e4dbd5b94203197674dc46
 ###
 
-PATCH http://localhost:3000/orders/65e4dbd5b94203197674dc46
+# Update one order by ID
+# Replace ':id' with an actual order ID
+# Include only the fields you wish to update in the JSON body
+PATCH http://localhost:3000/orders/65e4dbdab94203197674dc48
 Content-Type: application/json
 
 {
-    "order_user_id": "user123",
-    "products": "[{\"productId\": \"prod1\", \"quantity\": 4}, {\"productId\": \"prod3\", \"quantity\": 1}]",
-    "creditCard": "9876-5432-1987-6543"    
+  "products": "[{\"productId\":\"prod002\",\"quantity\":3}]"
 }
+###
+
+# Delete one order by ID
+# Replace ':id' with an actual order ID
+DELETE http://localhost:3000/orders/:id
+###
+
+
+/////////////////////////////////////////////////////////
+GET http://localhost:3000/guests
+
+###
+
+GET http://localhost:3000/guests/65e0e432bdca4fdf7ed72be7
+
+###
+POST http://localhost:3000/guests
+Content-Type: application/json
+
+{
+    "userType" : "guest"
+}
+
+###
+DELETE http://localhost:3000/guests/65ea04b80f121e479136b8ec
+
+
+###
+
+PATCH http://localhost:3000/guests/65ea04a80f121e479136b8ea
+Content-Type: application/json
+
+{
+    "userType" : "DodaShelGuest"
+}
+###

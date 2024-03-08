@@ -26,6 +26,14 @@ app.use('/users',userrouter)
 const productrouter = require('./routes/products')
 app.use('/products',productrouter)
 
+//creating guest route
+const guestrouter = require('./routes/guests')
+app.use('/guests',guestrouter)
+
+//creating order route
+const orderrouter = require('./routes/orders')
+app.use('/orders',orderrouter)
+
 
 
 

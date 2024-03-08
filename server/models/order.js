@@ -2,24 +2,23 @@
 const mongoose = require('mongoose') 
 
 //creating schema for user, defining all the elements.
-const productSchema = new mongoose.Schema({
+const orderSchema = new mongoose.Schema({
 
-    product_name:{
+    order_user_id:{
+        type: String ,
+        required: true
+    },
+
+    products:{
+        type: Array ,
+        required: true
+    },
+
+    craditCard:{
         type: String ,
         required: false
     },
-
-    product_Category:{
-        type: String ,
-        required: false
-    },
-
-    product_amount:{
-        type: String ,
-        required: false
-    },
-
-    product__creation_date:{
+    order_creation_date:{
         type: Date ,
         required: true ,
         default: Date.now
@@ -27,4 +26,4 @@ const productSchema = new mongoose.Schema({
 
 })
 
-module.exports = mongoose.model('Product',productSchema)
+module.exports = mongoose.model('Order',orderSchema)
