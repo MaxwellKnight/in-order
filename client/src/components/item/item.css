@@ -1,0 +1,39 @@
+.menu-item {
+	width: 100%;
+	display: grid;
+	background-color: var(--bg-left);
+	box-shadow: 0px 4px 10px 0px rgb(0 0 0 / .5);
+	border-radius: 3px;
+}
+
+.item-header > img {
+	max-width: 100%;
+	aspect-ratio: 2 / 1;
+	object-fit: cover;
+}
+
+.item-body > .item-desc{
+	display: flex;
+	flex-direction: column;
+}
+.item-body > .add-button {
+	text-align: center;
+	width: 40%;
+	background-color: #4caf50;
+	margin: 0;
+	cursor: pointer;
+}
+.item-body {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: .5rem 1rem;
+}
+
+.item-desc > span:first-child {
+	font-size: 1.8rem;
+}
+.item-desc > span:last-child {
+	font-size: 1rem;
+	color: rgb(255 255 255 / .5);
+}
