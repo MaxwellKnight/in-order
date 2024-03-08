@@ -18,4 +18,5 @@ module.exports = {
       { allowConstantExport: true },
     ],
   },
+	extends: ["react-app", "react-app/jest"],
 }
