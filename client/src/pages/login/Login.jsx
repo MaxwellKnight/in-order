@@ -1,16 +1,16 @@
 import { useState } from 'react';
 import { LoginForm, RegisterForm } from '../../components';
+import { useUser } from '../../context';
 import './login.css'
 
-const loginUser = async (credentials) => {
-	return fetch('http://localhost:3000/users/', {
-	  method: 'GET',
-	  headers: {
-		 'Content-Type': 'application/json'
-	  },
-	  body: JSON.stringify(credentials)
-	})
-	  .then(data => data.json())
+const loginUser = async (userId, setUser) => {
+	return fetch(`http://localhost:3000/users/${userId}`, {
+      headers : { 
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+       }})
+	  .then(data => data.text())
+	  .then(user => setUser(user));
 }
 
 const registerUser = async (data) => {
@@ -21,10 +21,11 @@ const registerUser = async (data) => {
 	  },
 	  body: JSON.stringify(data)
 	})
-	  .then(data => data.json())
+	  .then(res => console.log(res));
 }
 
 const Login = () => {
+	const user = useUser();
 	const [isRegister, setIsRegister] = useState(false);
 
 	return (
@@ -38,7 +39,7 @@ const Login = () => {
 				</section>
 				<section className="right-side">
 					<div>
-						{!isRegister ? <LoginForm setIsRegister={setIsRegister} loginUser={loginUser}/> : 
+						{!isRegister ? <LoginForm setIsRegister={setIsRegister} loginUser={loginUser} setUser={user.setUser}/> : 
 						<RegisterForm setIsRegister={setIsRegister} registerUser={registerUser}/>}
 					</div>
 				</section>

@@ -46,7 +46,7 @@ const RegisterForm = ({setIsRegister, registerUser}) => {
 			first_name: formData.fullName.split(" ")[0],
 			last_name: formData.fullName.split(" ")[1],
 			email_address: formData.email,
-			favorites: []
+			favorites: ""
 		}
 
 		registerUser(data);
@@ -83,7 +83,7 @@ const RegisterForm = ({setIsRegister, registerUser}) => {
 						</div>
 						<div>
 							<label htmlFor='confirmPassword'>אישור סיסמה</label>
-							<input id='confirmPassword' name='confirmPassword' type="text" />
+							<input id='confirmPassword' name='confirmPassword' type="password" />
 						</div>
 					</div>
 					<div className='policy-container'>

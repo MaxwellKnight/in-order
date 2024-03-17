@@ -25,7 +25,7 @@ const LoginForm = ({ setIsRegister, loginUser }) => {
 	}
 
 	const handleLogin = (event) => {
-		setUser(email);
+		loginUser('65ddbf5eeae6d5b8ea3bdd12')
 		navigate('/');
 	}
 	return (
