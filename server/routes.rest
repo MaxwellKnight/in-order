@@ -1,0 +1,135 @@
+GET http://localhost:3000/users
+
+###
+
+GET http://localhost:3000/users/65ddafb295750ee1da52850
+
+###
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+    "user_name" : "dodashelDor",
+    "password" : "dodashelOr" ,
+    "userType" : "cash_Register",
+    "first_name" : "doda",
+    "last_name" : "shelDor",
+    "email_address" :"dodashelDor@dodashelOr.com" ,
+    "favorites" : "balck coffe" 
+}
+
+###
+
+DELETE http://localhost:3000/users/
+
+
+###
+
+PATCH http://localhost:3000/users/65ddbf5eeae6d5b8ea3bdd12
+Content-Type: application/json
+
+{
+    "user_name" : "dodashelmaxwell",
+    "password" : " "
+}
+
+###
+GET http://localhost:3000/products
+###
+GET http://localhost:3000/products/65e0e30a8972939b4d7729bd
+
+
+###
+
+POST http://localhost:3000/products
+Content-Type: application/json
+
+{
+    "product_name" : "Dortrhttyteryeyertry",
+    "product_amount" : "523",
+    "product_Category": "shitttt"
+}
+
+
+###
+DELETE http://localhost:3000/products/65e0e3118972939b4d7729bf
+
+###
+
+PATCH http://localhost:3000/products/65e0e30a8972939b4d7729bd
+Content-Type: application/json
+
+{
+    "product_name" : "dodashelmaxwell",
+    "pruduct_amount" : "9",
+    "product_Category" : "stt"
+}
+###
+
+//Get all orders
+###
+GET http://localhost:3000/orders
+###
+
+# Get one order by ID
+# Replace ':id' with an actual order ID
+GET http://localhost:3000/orders/65e0e30a8972939b4d7729bd
+###
+
+# Create one order
+# You may need to adjust the JSON body according to your Order schema
+POST http://localhost:3000/orders
+Content-Type: application/json
+
+{
+  "order_user_id": "user123",
+  "products": "[{\"productId\":\"prod001\",\"quantity\":2}]",
+  "creditCard": "1234-5678-9101-1121"
+}
+###
+
+# Update one order by ID
+# Replace ':id' with an actual order ID
+# Include only the fields you wish to update in the JSON body
+PATCH http://localhost:3000/orders/65e4dbdab94203197674dc48
+Content-Type: application/json
+
+{
+  "products": "[{\"productId\":\"prod002\",\"quantity\":3}]"
+}
+###
+
+# Delete one order by ID
+# Replace ':id' with an actual order ID
+DELETE http://localhost:3000/orders/:id
+###
+
+
+/////////////////////////////////////////////////////////
+GET http://localhost:3000/guests
+
+###
+
+GET http://localhost:3000/guests/65e0e432bdca4fdf7ed72be7
+
+###
+POST http://localhost:3000/guests
+Content-Type: application/json
+
+{
+    "userType" : "guest"
+}
+
+###
+DELETE http://localhost:3000/guests/65ea04b80f121e479136b8ec
+
+
+###
+
+PATCH http://localhost:3000/guests/65ea04a80f121e479136b8ea
+Content-Type: application/json
+
+{
+    "userType" : "DodaShelGuest"
+}
+###

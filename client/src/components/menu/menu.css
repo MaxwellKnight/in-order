@@ -1,0 +1,19 @@
+.menu {
+	display: grid;
+	gap: 3rem;
+}
+.section-menu {
+	display: grid;
+	text-align: right;
+}
+
+.section-menu > p {
+	font-size: 2rem;
+	margin-block-end: 2rem;
+	font-weight: 600;
+}
+
+.menu-items {
+	display: flex;
+	gap: 2rem;
+}
