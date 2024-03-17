@@ -2,7 +2,8 @@ import {useState} from 'react'
 import './registerForm.css'
 
 
-const RegisterForm = ({setIsRegister}) => {
+
+const RegisterForm = ({setIsRegister, registerUser}) => {
 	const [formData, setFormData] = useState({
 		fullName: '',
 		username: '',
@@ -34,6 +35,23 @@ const RegisterForm = ({setIsRegister}) => {
 		  }));
 		}
 	 };
+
+	 const handleRegister = (e) => {
+		e.preventDefault();
+
+		const data = {
+			user_name: formData.username,
+			password: formData.password,
+			userType: "user",
+			first_name: formData.fullName.split(" ")[0],
+			last_name: formData.fullName.split(" ")[1],
+			email_address: formData.email,
+			favorites: []
+		}
+
+		registerUser(data);
+		setIsRegister(false);
+	 }
 
 	return (
 		<div className='register-form'>
@@ -72,9 +90,13 @@ const RegisterForm = ({setIsRegister}) => {
 						<label htmlFor='policyAgreement'>אישור תנאי שימוש</label>
 						<input type='checkbox' id='policyAgreement' name='policyAgreement'/>
 					</div>
+					<div className='policy-container'>
+						<label htmlFor='policyAgreement'>חשבון מנהל</label>
+						<input type='checkbox' id='admin' name='admin'/>
+					</div>
 				</div>
 
-				<button>הרשם</button>
+				<button onClick={(e) => handleRegister(e)}>הרשם</button>
 			</form>
 		</div>
 	)

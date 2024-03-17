@@ -1,8 +1,11 @@
 import { useState } from 'react';
 import './loginForm.css'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { useUser } from '../../context';
 
-const LoginForm = ({ setIsRegister }) => {
+const LoginForm = ({ setIsRegister, loginUser }) => {
+	const { setUser } = useUser();
+	const navigate = useNavigate();
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
 
@@ -20,6 +23,11 @@ const LoginForm = ({ setIsRegister }) => {
 		event.preventDefault();
 		setIsRegister(true);
 	}
+
+	const handleLogin = (event) => {
+		setUser(email);
+		navigate('/');
+	}
 	return (
 		<div className='login-form-wrapper'>
 			<div className='login-form'>
@@ -27,7 +35,7 @@ const LoginForm = ({ setIsRegister }) => {
 				<form>
 					<input onChange={handleEmail} type="email" id="email" name="email" placeholder="אימייל"/>
 					<input onChange={handlePassword} type="password" id="password" name="password" placeholder="סיסמה"/>
-					<button onClick={(e) => e.preventDefault()}>התחבר/י</button>
+					<Link to='/'><button onClick={handleLogin}>התחבר/י</button></Link>
 				</form>
 				<div className='buttons'>
 					<span>?הראשון שלך</span>
