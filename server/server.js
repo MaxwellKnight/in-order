@@ -1,6 +1,7 @@
 //includes
 require('dotenv').config()
 const express = require('express')
+const cors = require('cors');
 const mongoose = require('mongoose')
 
 //create app
@@ -14,6 +15,9 @@ const db = mongoose.connection
 //checking connection
 db.on('error', (error) => console.error(error))
 db.once('open', () => console.log('Connected to Database'))
+
+//Allow cors middleware
+app.use(cors());
 
 //Middleware to json file
 app.use(express.json()) 
